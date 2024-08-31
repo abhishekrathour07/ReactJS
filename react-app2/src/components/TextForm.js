@@ -35,7 +35,7 @@ export default function TextForm(props) {
     const clearText = () => {
         const text = '';
         usetext(text);
-        props.togglealert("All tee text from textbox is cleared ", "success ");
+        props.togglealert("All the text from textbox is cleared ", "success ");
     }
 
     // On click copy the whole content

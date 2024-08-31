@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import About from './components/About';
 // npm i --to download all modules
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       <Alert alert={alert} />
       <div className="container">
         <TextForm heading="Enter the text here" mode={mode} togglealert={togglealert} />
+        {/* <About mode={mode}/ > */}
       </div>
     </>
   );
