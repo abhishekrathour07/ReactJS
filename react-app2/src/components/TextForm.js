@@ -56,6 +56,20 @@ export default function TextForm(props) {
 
     }
 
+    const capitalize = () => {
+        const word = text.split('.')
+        //    console.log(word);
+        let data = [];
+        for (let i = 0; i < word.length; i++) {
+            let trimdata = word[i].trim();
+            let capital = trimdata.charAt(0).toUpperCase() + trimdata.slice(1);
+            data.push(capital);
+            // console.log(capital);
+        }
+        const result = data.join(' . ')
+        usetext(result)
+
+    }
     const onClickChange = (event) => {
         usetext(event.target.value)
     }
@@ -67,7 +81,7 @@ export default function TextForm(props) {
         <div>
             <div className="mb-3">
                 <h1>{props.heading}</h1>
-                <textarea className="form-control" id="txt" rows="5" value={text} onChange={onClickChange} spellCheck='true' style={{backgroundColor: props.mode==='black'?'#13466e':'white',color:props.mode==='black'?'white':'black',}}></textarea>
+                <textarea className="form-control" id="txt" rows="5" value={text} onChange={onClickChange} spellCheck='true' style={{ backgroundColor: props.mode === 'black' ? '#13466e' : 'white', color: props.mode === 'black' ? 'white' : 'black', }}></textarea>
             </div>
             <div className="all-buttons">
                 <button type="button" className="btn btn-primary mx-2 my-2" onClick={toUpper} >UpperCase</button>
@@ -77,6 +91,7 @@ export default function TextForm(props) {
                 <button type="button" className="btn btn-primary mx-2 my-2" onClick={clearText} >Clear text</button>
                 <button type="button" className="btn btn-primary mx-2 my-2" onClick={onClickCopy}>Copy text</button>
                 <button type="button" className="btn btn-primary mx-2 my-2" onClick={removeSpaces} >Remove space</button>
+                <button type="button" className="btn btn-primary mx-2 my-2" onClick={capitalize} >Capitalize</button>
 
 
             </div>

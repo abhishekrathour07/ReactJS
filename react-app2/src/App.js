@@ -4,6 +4,11 @@ import Navbar from "./components/Navbar";
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 // npm i --to download all modules
 
 function App() {
@@ -41,12 +46,19 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextWorkers" toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className="container">
-        <TextForm heading="Enter the text here" mode={mode} togglealert={togglealert} />
-        {/* <About mode={mode}/ > */}
-      </div>
+      <Router>
+        <Navbar title="TextWorkers" toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container">
+          <Routes>
+            <Route path="/about" element={<About mode={mode} />}>
+
+            </Route>
+            <Route path="/" element={<TextForm heading="Enter the text here" mode={mode} togglealert={togglealert} />}>
+            </Route>
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
