@@ -62,7 +62,7 @@ export default function TextForm(props) {
         let data = [];
         for (let i = 0; i < word.length; i++) {
             let trimdata = word[i].trim();
-            let capital = trimdata.charAt(0).toUpperCase() + trimdata.slice(1);
+            let capital = trimdata.charAt(0).toUpperCase() + trimdata.slice(1).toLowerCase();
             data.push(capital);
             props.togglealert("Sentences are capitalize", "success");
             // console.log(capital);
@@ -98,7 +98,7 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3">
                 <h2>Summary</h2>
-                <p>  {text.split(" ").filter((element) => { return element.length !== 0 }).length}  Words {text.length} Charcters</p>
+                <p>  {text.split(/\s+/).filter((element) => { return element.length !== 0 }).length}  Words {text.length} Charcters</p>
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes- Average time to read this text</p>
                 <h2>Preview</h2>
                 <p>{text}</p>

@@ -19,24 +19,24 @@ export default function About(props) {
                 <div className="accordion-item" style={{backgroundColor: props.mode==='black'?'#13466e':'white',color:props.mode==='black'?'white':'black',}}>
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={{backgroundColor: props.mode==='black'?'#13466e':'white',color:props.mode==='black'?'white':'black',}}>
-                            Accordion Item #2
+                            Features
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>To change the background color .</strong> switch one tab to another tab<code>without reloading the page</code>,Which makes page mor faster then previos reloaded pages.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item" style={{backgroundColor: props.mode==='black'?'#13466e':'white',color:props.mode==='black'?'white':'black',}}>
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={{backgroundColor: props.mode==='black'?'#13466e':'white',color:props.mode==='black'?'white':'black',}}>
-                            Accordion Item #3
+                            Aim of TextWorkers
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>To solve the daily life problem.</strong>It is helping the individuals to perform some basic operation and you can find very opertion on a single website <code>.one page-many works</code>, though the transition does limit overflow.
                         </div>
                     </div>
                 </div>
