@@ -64,6 +64,7 @@ export default function TextForm(props) {
             let trimdata = word[i].trim();
             let capital = trimdata.charAt(0).toUpperCase() + trimdata.slice(1);
             data.push(capital);
+            props.togglealert("Sentences are capitalize", "success");
             // console.log(capital);
         }
         const result = data.join(' . ')
@@ -84,21 +85,21 @@ export default function TextForm(props) {
                 <textarea className="form-control" id="txt" rows="5" value={text} onChange={onClickChange} spellCheck='true' style={{ backgroundColor: props.mode === 'black' ? '#13466e' : 'white', color: props.mode === 'black' ? 'white' : 'black', }}></textarea>
             </div>
             <div className="all-buttons">
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={toUpper} >UpperCase</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={toLOwer}>LowerCase</button>
-                <button type="button" className="btn btn-primary  mx-2 my-2" onClick={ontweet}>Tweet</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={onRepeat}>Muntipyx10</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={clearText} >Clear text</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={onClickCopy}>Copy text</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={removeSpaces} >Remove space</button>
-                <button type="button" className="btn btn-primary mx-2 my-2" onClick={capitalize} >Capitalize</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={toUpper} >UpperCase</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={toLOwer}>LowerCase</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary  mx-2 my-2" onClick={ontweet}>Tweet</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={onRepeat}>Muntipyx10</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={clearText} >Clear text</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={onClickCopy}>Copy text</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={removeSpaces} >Remove space</button>
+                <button disabled={text.length === 0} type="button" className="btn btn-primary mx-2 my-2" onClick={capitalize} >Capitalize</button>
 
 
             </div>
             <div className="container my-3">
                 <h2>Summary</h2>
-                <p>  {text.split(" ").length - 1}  Words {text.length} Charcters</p>
-                <p>{0.008 * text.split(" ").length} Minutes- Average time to read this text</p>
+                <p>  {text.split(" ").filter((element) => { return element.length !== 0 }).length}  Words {text.length} Charcters</p>
+                <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} Minutes- Average time to read this text</p>
                 <h2>Preview</h2>
                 <p>{text}</p>
             </div>
