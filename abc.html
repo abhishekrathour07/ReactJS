@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #0b3456;
+            color: white;
+
+            text-align: center;
+
+        }
+
+        h1 {
+            color: red;
+            font-size: 40px;
+
+        }
+
+        .btn {
+            height: 40px;
+            width: 120px;
+            margin-top: 12px;
+            border-radius: 12px;
+            outline: none;
+            color: white;
+            border: none;
+            background-color: red;
+            margin-right: 140px;
+            font-weight: bold;
+        }
+        .btn:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+
+        #expression {
+            height: 40px;
+            width: 280px;
+            border: none;
+            outline: none;
+            border-radius: 12px;
+            padding: 5px;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Math Expression Evaluator</h1>
+    <!-- <form> -->
+    <h3>Enter a Mathematical Expression:</h3><input type="text" id="expression" name="expression"
+        placeholder="Enter the Expression"><br>
+    <input type="submit" value="Evaluate" onClick="evaluateExpression()" class="btn">
+    <!-- </form> -->
+    <h3 id="result"></h3>
+    <script>
+        function evaluateExpression() {
+            var expressionInput = document.getElementById('expression').value;
+            var res = eval(expressionInput);
+            console.log(res);
+
+            let result = document.getElementById('result');
+            result.innerHTML = `Result of mathematical expression is : ${res}`;
+            console.log(result);
+
+
+            // document.write(`<h2>The result of mathmatical expression is : ${res}</h2>`);
+        }
+    </script>
+
+
+</body>
+
+</html>
