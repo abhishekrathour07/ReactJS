@@ -1,0 +1,39 @@
+.ullist{
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    color:white;
+    font-size: bold;
+    align-items: center;
+    padding: 5px;
+}
+.nav-ele{
+    display: flex;
+    gap: 1.5rem;
+    list-style-type: none;
+    
+}
+.box{
+    margin-right: 1rem;
+    display: flex;
+    gap: .4rem;
+}
+.input{
+    padding: .5rem;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}
+button{
+    padding: .5rem;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}
+button:hover{
+    color:white;
+    background-color: green;
+    cursor: pointer;
+}
